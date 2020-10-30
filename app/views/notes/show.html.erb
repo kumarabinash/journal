@@ -1,0 +1,18 @@
+
+<div class="row justify-content-md-center" style="margin-top: 10px;">
+  <div class="col-md-6 align-self-center">
+    <h2><%= @note.title %></h2>
+    <div>
+      <% if @note.tags.present? %>
+        <% @note.tags.each do |tag| %>
+          <%= render partial: "tags/tag", locals: {tag: tag, note_count: false} %>
+        <% end %>
+      <% end %>
+    </div>
+    <hr>
+
+    <div>
+      <%= @note.body %>
+    </div>
+  </div>
+</div>

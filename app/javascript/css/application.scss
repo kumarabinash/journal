@@ -4,6 +4,40 @@
   padding-top: 20px;
 }
 
+.tag{
+  border: 1px solid tan;
+  padding: 5px 20px;
+  border-radius: 30px;
+  margin-right: 15px;
+  background: tan;
+  color: white;
+  cursor: pointer;
+}
+.tag.red{
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.tag.green{
+  background: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.tag.blue{
+  background: #3498db;
+  border-color: #3498db;
+}
+
+.tag.orange{
+  background: #e67e22;
+  border-color: #e67e22;
+}
+
+.tag.grey{
+  background: #7f8c8d;
+  border-color: #7f8c8d;
+}
+
 .note{
   border: 1px solid #c6c6c6;
   padding: 20px;
@@ -33,18 +67,24 @@
     bottom: 15px;
     right: 15px;
   }
+
+  .tags{
+    margin-bottom: 10px;
+  }
+
+  .tag{
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+  }
 }
 .note:hover{
   transform: scale(1.1);
 }
 
-.tag{
-  border: 1px solid tan;
-  padding: 5px 20px;
-  border-radius: 30px;
-  margin-right: 15px;
-  background: tan;
-  color: white;
-  cursor: pointer;
-}
+
+
 

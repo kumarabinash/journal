@@ -15,7 +15,6 @@ import 'select2/dist/css/select2.css'
 import 'css/application'
 
 window.addEventListener('DOMContentLoaded', () => {
-   console.log("Loaded");
    $('#select2').select2({
       tags: true,
       ajax: {
@@ -25,7 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
          data: function (params) {
             return {
                q: params.term // search term
-               // page: params.page
             };
          },
          processResults: function(data, params){
@@ -34,13 +32,19 @@ window.addEventListener('DOMContentLoaded', () => {
             }
          },
          cache: true
-         // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
       }
    });
 
+
    $(".note").on('click', (e) => {
-      alert("Hi")
-      window.href = "/dashboard"
+      e.stopPropagation();
+      let id = $(e.currentTarget).attr('data-item-id');
+      window.location.href = "/notes/" + id
+   });
+
+   $(".tag").on('click', (e) => {
+      e.stopPropagation();
+      window.location.href = "/notes?filter_tag_id=" + $(e.currentTarget).attr('data-item-id')
    });
 });
 

@@ -10,4 +10,19 @@ module ApplicationHelper
     end
 
   end
+
+  def generate_random_color_from_name(name)
+    name = name.to_s
+    if name[0].upcase <= 'E'
+      color = 'red'
+    elsif name[0].upcase <= 'K'
+      color = 'blue'
+    elsif name[0].upcase <= 'Q'
+      color = "green"
+    elsif name[0].upcase <= 'W'
+      color = 'orange'
+    elsif name[0].upcase <= 'Z'
+      color = 'grey'
+    end
+  end
 end

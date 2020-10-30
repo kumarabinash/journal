@@ -3,11 +3,12 @@ class NotesController < ApplicationController
   layout "application"
 
   def index
-    @notes = current_user.notes.includes(:tags)
+    @op = Notes::Ops::Index.(current_user: current_user, params: params)
+    @notes = @op.notes
   end
 
   def show
-    @notes = current_user.notes.find_by(id: params[:id])
+    @note = current_user.notes.find_by(id: params[:id])
   end
 
   def new
@@ -15,7 +16,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    @op =  Notes::Ops::Create.(current_user: current_user, params: params)
+    @op = Notes::Ops::Create.(current_user: current_user, params: params)
 
     if @op.success?
       redirect_to action: :index

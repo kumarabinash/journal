@@ -1,3 +1,5 @@
-<span class="tag">
-  <%= tag.name %> (<%= note_count %>)
+<% color = generate_random_color_from_name(tag.name) %>
+
+<span class="tag <%= color %>" data-item-id="<%= tag.id %>">
+  <%= tag.name %><% if note_count.present? %>(<%= note_count %>)<% end %>
 </span>
