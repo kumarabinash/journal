@@ -21,7 +21,7 @@ class BaseOperation
   end
 
   def execute
-    steps = %i( init validate process )
+    steps = %i( init validate process post_process )
 
     steps.each do |step|
       self.send(step)
@@ -41,6 +41,9 @@ class BaseOperation
   end
 
   def process
+  end
+
+  def post_process
   end
 
   def success

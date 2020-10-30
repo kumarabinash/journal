@@ -6,6 +6,10 @@ class NotesController < ApplicationController
     @notes = current_user.notes.includes(:tags)
   end
 
+  def show
+    @notes = current_user.notes.find_by(id: params[:id])
+  end
+
   def new
     @note ||= Note.new
   end
