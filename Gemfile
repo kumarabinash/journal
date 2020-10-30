@@ -28,6 +28,11 @@ gem 'jbuilder', '~> 2.7'
 # Devise for authentication
 gem 'devise'
 
+# Trailblazers
+gem "trailblazer-rails"
+gem "reform"
+gem "dry-validation"
+
 # Helper for printing an object neatly
 gem 'awesome_print'
 
