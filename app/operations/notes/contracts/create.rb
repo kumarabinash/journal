@@ -1,4 +1,7 @@
 class Notes::Contracts::Create < Reform::Form
+  # include Reform::Form::ActiveModel
+  # include Reform::Form::ActiveModel::FormBuilderMethods
+
   property :title
   property :body
   # property :tags

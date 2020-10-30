@@ -9,9 +9,16 @@
 </head>
 
 <body>
-<%= render partial: "application/nav" %>
-<div class="container-fluid">
-  <%= yield %>
-</div>
+  <%= render partial: "application/nav" %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>
+
 </body>
 </html>

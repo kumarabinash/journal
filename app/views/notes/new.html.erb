@@ -1,7 +1,15 @@
 <h2>Create New Note</h2>
 
-<%= form_with model: @note do |f| %>
+<%= form_for @note do |f| %>
   <%#= render "users/shared/error_messages", resource: resource %>
+
+
+  <% if flash[:alert].present? %>
+    <% flash[:alert].each do |error| %>
+      <div><%= error %></div>
+    <% end %>
+  <% end %>
+
 
   <div class="field">
     <%= f.label :title %><br />

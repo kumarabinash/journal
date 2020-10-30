@@ -7,12 +7,16 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new(user_id: current_user.id)
+    @note ||= Note.new(body: "body")
   end
 
   def create
-    @op = ::Notes::Ops::Create.(params: params, current_user: current_user)
-    # @op['contract.default'].errors.messages
+    # @note = Note.new(note_params)
+
+    # @note = Note.new(body: "fjdklsfj")
+    @op =  Notes::Ops::Create.(current_user: current_user, params: params)
+
+    redirect_to action: :new
 
   end
 
@@ -22,5 +26,11 @@ class NotesController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def note_params
+    params.require(:note).permit(:title, :body)
   end
 end
