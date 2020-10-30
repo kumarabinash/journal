@@ -3,7 +3,11 @@
 .notes{
   padding-top: 20px;
 }
-
+.tags-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .tag{
   border: 1px solid tan;
   padding: 5px 20px;
@@ -47,20 +51,34 @@
   margin: 0;
   margin-bottom: 30px;
   box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.5);
-  height: 230px;
+  height: 280px;
   transition: transform .2s;
   cursor: pointer;
 
   position: relative;
 
-  h3{
-    font-size: 18px;
+  .header{
+    h3{
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .tags{
+
   }
 
   .body{
     margin-top: 0;
     font-size: 13px;
     margin-bottom: 1rem;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
   }
 
   .meta{
@@ -68,6 +86,7 @@
     position: absolute;
     bottom: 15px;
     right: 15px;
+    color: cornflowerblue;
   }
 
   .tags{

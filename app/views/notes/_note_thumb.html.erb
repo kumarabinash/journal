@@ -1,12 +1,22 @@
-<div class="col-md-3">
+<div class="col-md-12 col-sm-12 col-lg-3 col-12">
   <div class="note" data-item-id="<%= note.id %>">
-    <h3><%= note.title.length > 35 ? note.title[0..35] + "..." : note.title %></h3>
+
+    <div class="header">
+<!--      <h3><%#= note.title.length > 35 ? note.title[0..35] + "..." : note.title %></h3>-->
+      <h3><%= note.title %></h3>
+    </div>
+
     <div class="tags">
       <% note.tags.first(3).each do |tag| %>
         <%= render partial: 'tags/tag', locals: {tag: tag, note_count: false, ellipsis: true} %>
       <% end %>
     </div>
-    <div class="body"><%= note.body[0..160] %></div>
+
+    <div class="body">
+      <%#= note.body.length > 160 ? note.body[0..157] + "..." : note.body %>
+      <%= note.body %>
+    </div>
+
     <div class="meta"><%= note.created_at.strftime("%b %d %y @ %l:%M %p") %></div>
   </div>
 </div>
