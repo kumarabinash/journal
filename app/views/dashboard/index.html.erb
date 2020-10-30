@@ -1,1 +1,28 @@
-<h1>Welcome <%= current_user.name %></h1>
+<div class="row justify-content-md-center">
+  <div class="col-md-10 align-self-center notes">
+
+    <% if @notes.present? %>
+      <h3>Your Recent Notes</h3>
+      <div class="row">
+        <% @notes.each do |note| %>
+          <%= render partial: "notes/note_thumb", locals: {note: note} %>
+        <% end %>
+      </div>
+    <% else %>
+      <% # todo - Add  Placeholder %>
+    <% end %>
+  </div>
+
+
+  <div class="col-md-10 align-self-center notes">
+    <h3>Tags</h3>
+    <% if @tags.present? %>
+      <% @tags.each do |tag| %>
+        <%= render partial: "tags/tag", locals: {tag: tag, note_count: @notes_per_tag[tag.id]} %>
+      <% end %>
+    <% else %>
+      You do not have any tags
+    <% end %>
+
+  </div>
+</div>

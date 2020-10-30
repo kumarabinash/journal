@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   layout "application"
 
   def index
-    @notes = current_user.notes
+    @notes = current_user.notes.includes(:tags)
   end
 
   def new

@@ -17,4 +17,8 @@ class Note < ApplicationRecord
 
   has_many :note_taggings
   has_many :tags, through: :note_taggings
+
+  scope :updated_at_desc, -> () {
+    order(updated_at: :desc)
+  }
 end

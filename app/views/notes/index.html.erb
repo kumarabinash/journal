@@ -4,16 +4,11 @@
     <% if @notes.present? %>
       <div class="row">
         <% @notes.each do |note| %>
-          <div class="col-md-3">
-            <div class="note">
-              <h3><%= note.title %></h3>
-              <div class="body"><%= note.body[0..160] %></div>
-              <div class="meta"><%= note.created_at.strftime("%b %d %y @ %h:%m %I") %></div>
-            </div>
-          </div>
+          <%= render partial: "notes/note_thumb", locals: {note: note} %>
         <% end %>
       </div>
     <% else %>
+    <% # todo - Add  Placeholder %>
     <% end %>
   </div>
 </div>

@@ -37,3 +37,13 @@
 .note:hover{
   transform: scale(1.1);
 }
+
+.tag{
+  border: 1px solid tan;
+  padding: 5px 20px;
+  border-radius: 30px;
+  margin-right: 15px;
+  background: tan;
+  color: white;
+  cursor: pointer;
+}

@@ -10,6 +10,12 @@
 class Tag < ApplicationRecord
 
   has_many :note_taggings
-  has_many :note, through: :note_taggings
+  has_many :notes, through: :note_taggings
 
+  validates :name, length: { in: 1..30 }
+
+  scope :user_tags, -> (user) {
+    post_ids = Note.where(user_id: user.id).select(:id)
+    where(id: NoteTagging.where(note_id: post_ids).select(:tag_id))
+  }
 end
