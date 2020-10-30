@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index'
 
+  resources :notes
+
 
 end
