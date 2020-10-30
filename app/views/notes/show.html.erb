@@ -5,7 +5,7 @@
     <div>
       <% if @note.tags.present? %>
         <% @note.tags.each do |tag| %>
-          <%= render partial: "tags/tag", locals: {tag: tag, note_count: false} %>
+          <%= render partial: "tags/tag", locals: {tag: tag, note_count: false, ellipsis: false} %>
         <% end %>
       <% end %>
     </div>

@@ -1,5 +1,6 @@
 <% color = generate_random_color_from_name(tag.name) %>
 
 <span class="tag <%= color %>" data-item-id="<%= tag.id %>">
-  <%= tag.name %><% if note_count.present? %>(<%= note_count %>)<% end %>
+  <%= ellipsis && tag.name.length > 7 ? tag.name[0..7] + "..." : tag.name %>
+  <% if note_count.present? %>(<%= note_count %>)<% end %>
 </span>

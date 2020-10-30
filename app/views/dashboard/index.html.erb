@@ -18,11 +18,11 @@
   </div>
 
 
-  <div class="col-md-10 align-self-center notes">
+  <div class="col-md-10 align-self-center notes" style="padding: 10px;">
     <h3>Tags</h3>
     <% if @tags.present? %>
       <% @tags.each do |tag| %>
-        <%= render partial: "tags/tag", locals: {tag: tag, note_count: @notes_per_tag[tag.id]} %>
+        <%= render partial: "tags/tag", locals: {tag: tag, note_count: @notes_per_tag[tag.id], ellipsis: false} %>
       <% end %>
     <% else %>
       You do not have any tags
