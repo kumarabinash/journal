@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version : 2.6.1
+* Rails version : 6.0.3
 
-Things you may want to cover:
+## Journal
 
-* Ruby version
+Journal is a self hosted note taking app
 
-* System dependencies
+You can checkout the demo [here](https://radiant-brushlands-29079.herokuapp.com/). Create an account to get started
 
-* Configuration
+Features:
 
-* Database creation
+- Create & Browse through your notes
+- Find recent notes
+- Add tags to your notes
+- Find notes by tags
 
-* Database initialization
+Install on your own machine: 
 
-* How to run the test suite
+- Pull this project
+- Do a bundle install
+- Run db:create & db:migrate
+- Create an account & start using
 
-* Services (job queues, cache servers, search engines, etc.)
+Roadmap:
 
-* Deployment instructions
+- WYSIWYG Editor, add formatting to your notes
+- Sort your notes
+- Search through your notes
+- Advance filters like searching notes with created/updated time
+- Recycle bin, deleted can be restored within 30 days of deletion
+- Mark notes as your favorite
+- Attach picutres, files to your notes
 
-* ...
+
+Contact:
+
+Feel free to reach out to me for any queries at abinash.b2@gmail.com
