@@ -1,1 +1,39 @@
 @import "~bootstrap/scss/bootstrap.scss";
+
+.notes{
+  padding-top: 20px;
+}
+
+.note{
+  border: 1px solid #c6c6c6;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.5);
+  height: 230px;
+  transition: transform .2s;
+  cursor: pointer;
+
+  position: relative;
+
+  h3{
+    font-size: 18px;
+  }
+
+  .body{
+    margin-top: 0;
+    font-size: 13px;
+    margin-bottom: 1rem;
+  }
+
+  .meta{
+    font-size: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+.note:hover{
+  transform: scale(1.1);
+}

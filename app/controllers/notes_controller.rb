@@ -13,14 +13,13 @@ class NotesController < ApplicationController
   def create
     @op =  Notes::Ops::Create.(current_user: current_user, params: params)
 
-    @note = @op.note
-
-    debugger
-
-    flash_message :error, @op.messages[:error]
-
-    render :action => 'new'
-
+    if @op.success?
+      redirect_to action: :index
+    else
+      @note = @op.note
+      flash_message :error, @op.messages[:error]
+      render :action => 'new'
+    end
   end
 
   def update

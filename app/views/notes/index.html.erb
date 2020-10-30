@@ -1,1 +1,19 @@
-<%= @notes.count %>
+<div class="row justify-content-md-center">
+  <div class="col-md-10 align-self-center notes">
+
+    <% if @notes.present? %>
+      <div class="row">
+        <% @notes.each do |note| %>
+          <div class="col-md-3">
+            <div class="note">
+              <h3><%= note.title %></h3>
+              <div class="body"><%= note.body[0..160] %></div>
+              <div class="meta"><%= note.created_at.strftime("%b %d %y @ %h:%m %I") %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+    <% end %>
+  </div>
+</div>
