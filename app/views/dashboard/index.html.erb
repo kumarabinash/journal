@@ -2,14 +2,18 @@
   <div class="col-md-10 align-self-center notes">
 
     <% if @notes.present? %>
-      <h3>Your Recent Notes</h3>
+      <h3 class="text-center" style="margin-bottom: 20px;">Your Recent Notes</h3>
       <div class="row">
         <% @notes.each do |note| %>
           <%= render partial: "notes/note_thumb", locals: {note: note} %>
         <% end %>
       </div>
     <% else %>
-      <% # todo - Add  Placeholder %>
+      <div class="text-center">
+        <h3 class="text-center">You don't have any notes</h3>
+        <%= image_tag "no-data-found.jpg", width: "300"  %>
+        <h3 class="text-center">Click on <%= link_to "New Note", new_note_path %> to create a note</h3>
+      </div>
     <% end %>
   </div>
 

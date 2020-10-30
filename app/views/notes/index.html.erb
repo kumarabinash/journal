@@ -8,7 +8,10 @@
         <% end %>
       </div>
     <% else %>
-    <% # todo - Add  Placeholder %>
+      <div class="text-center">
+        <%= image_tag "no-data-found.jpg", width: "400"  %>
+        <h3 class="text-center">No notes found. Click on <%= link_to "New Note", new_note_path %> to create a note</h3>
+      </div>
     <% end %>
   </div>
 </div>
