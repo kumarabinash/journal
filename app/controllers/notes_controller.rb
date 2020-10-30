@@ -7,16 +7,19 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note ||= Note.new(body: "body")
+    @note ||= Note.new
   end
 
   def create
-    # @note = Note.new(note_params)
-
-    # @note = Note.new(body: "fjdklsfj")
     @op =  Notes::Ops::Create.(current_user: current_user, params: params)
 
-    redirect_to action: :new
+    @note = @op.note
+
+    debugger
+
+    flash_message :error, @op.messages[:error]
+
+    render :action => 'new'
 
   end
 

@@ -12,6 +12,9 @@
 class Note < ApplicationRecord
   belongs_to :user
 
+  validates :title, length: { in: 3..256 }
+  validates :body, length: { in: 3..65536 }
+
   has_many :note_taggings
   has_many :tags, through: :note_taggings
 end

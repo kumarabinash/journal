@@ -44,9 +44,19 @@ class BaseOperation
   end
 
   def success
+    self
   end
 
   def failure
+    self
+  end
+
+  def success?
+    messages[:error].blank?
+  end
+
+  def failure?
+    messages[:error].present?
   end
 
 end
