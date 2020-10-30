@@ -2,7 +2,7 @@
   <div class="note" data-item-id="<%= note.id %>">
     <h3><%= note.title %></h3>
     <div class="tags">
-      <% note.tags.each do |tag| %>
+      <% note.tags.first(3).each do |tag| %>
         <%= render partial: 'tags/tag', locals: {tag: tag, note_count: false} %>
       <% end %>
     </div>
