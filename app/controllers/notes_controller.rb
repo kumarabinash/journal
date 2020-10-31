@@ -19,6 +19,7 @@ class NotesController < ApplicationController
     @op = Notes::Ops::Create.(current_user: current_user, params: params)
 
     if @op.success?
+      flash_message :success, @op.messages[:success]
       redirect_to action: :index
     else
       @note = @op.note
@@ -32,12 +33,14 @@ class NotesController < ApplicationController
   end
 
   def destroy
-
-  end
-
-  private
-
-  def note_params
-    params.require(:note).permit(:title, :body)
+    @op = Notes::Ops::Destroy.(current_user: current_user, params: params)
+    if @op.success?
+      redirect_to action: :index
+      flash_message :success, @op.messages[:success]
+    else
+      @note = @op.note
+      flash_message :error, @op.messages[:error]
+      render :action => 'show'
+    end
   end
 end

@@ -31,7 +31,7 @@ class Notes::Ops::Create < BaseOperation
   end
 
   def post_process
-    tags.each do |tag_name|
+    tags&.each do |tag_name|
       tag = Tag.user_tags(current_user).find_or_initialize_by(name: tag_name)
       tag.save
       note.note_taggings.find_or_initialize_by(tag_id: tag.id).save

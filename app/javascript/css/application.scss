@@ -23,7 +23,6 @@
   background: #e74c3c;
   border-color: #e74c3c;
 }
-
 .tag.green{
   background: #2ecc71;
   border-color: #2ecc71;
@@ -42,6 +41,11 @@
 .tag.grey{
   background: #7f8c8d;
   border-color: #7f8c8d;
+}
+
+.meta{
+  color: cornflowerblue;
+  font-size: 12px;
 }
 
 .note{
@@ -106,6 +110,7 @@
 .note:hover{
   transform: scale(1.1);
 }
+
 
 
 

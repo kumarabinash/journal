@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   def flash_message(type, messages)
+    flash.clear
     flash[type] = []
 
     if messages.is_a?(Array)
@@ -8,8 +9,10 @@ module ApplicationHelper
     else
       flash[type] << text
     end
-
   end
+
+  # def clear_flash
+  # end
 
   def generate_random_color_from_name(name)
     name = name.to_s

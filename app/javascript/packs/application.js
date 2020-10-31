@@ -13,8 +13,10 @@ import 'select2'
 import 'select2/dist/css/select2.css'
 
 import 'css/application'
+import "../lib/notify"
 
 window.addEventListener('DOMContentLoaded', () => {
+   // Select2 for tags
    $('#select2').select2({
       tags: true,
       ajax: {
@@ -36,6 +38,25 @@ window.addEventListener('DOMContentLoaded', () => {
    });
 
 
+   // Notifications plugin
+   const notices = JSON.parse(window.localStorage.getItem('notices'));
+   window.localStorage.removeItem('notices');
+
+   if(typeof notices !== 'undefined'){
+      for(let msg_type in notices){
+         let msg = notices[msg_type];
+         let messages = typeof msg === 'string' ? [msg] : msg;
+
+         messages.forEach(message => {
+            $.notify(message, {
+               className: msg_type,
+               position: 'bottom right'
+            });
+         });
+      }
+   }
+
+   // Other app related functionalities
    $(".note").on('click', (e) => {
       e.stopPropagation();
       let id = $(e.currentTarget).attr('data-item-id');

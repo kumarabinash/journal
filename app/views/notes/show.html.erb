@@ -2,6 +2,15 @@
 <div class="row justify-content-md-center" style="margin-top: 10px;">
   <div class="col-md-6 align-self-center">
     <h2><%= @note.title %></h2>
+    <div class="meta">
+      <%= @note.created_at.strftime("%b %d %y @ %l:%M %p") %>
+
+      <div class="actions text-right float-right">
+        <%= button_to 'Delete', note_path(@note), :method => :delete, class: "btn btn-sm btn-danger"%>
+<!--        <button class="btn btn-sm btn-warning">Edit</button>-->
+<!--        <button class="btn btn-sm btn-danger">Destroy</button>-->
+      </div>
+    </div>
     <div>
       <% if @note.tags.present? %>
         <% @note.tags.each do |tag| %>

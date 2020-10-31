@@ -15,11 +15,13 @@
     <%= yield %>
   </div>
 
-  <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-  <% end %>
+
+  <script type="text/javascript" charset="utf-8">
+      noticies = <%= raw json_escape(flash.to_h.to_json) %>;
+      localStorage.setItem("notices", JSON.stringify(noticies));
+  </script>
+
+
 
 </body>
 </html>
